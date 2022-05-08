@@ -1,0 +1,38 @@
+clear all
+close all
+
+%% Fill Parameters
+
+filename = "FurElise.wav";
+max_time = 1; % how long of an audio file do you want to use in seconds
+bits_per_phrase = 8;
+
+% Read Audio file  and create struct
+[input_sig, Fs] = audioread(filename);
+num_samples = size(input_sig, 1);
+max_sample = round(Fs*max_time);% the maximum time sample to reach.
+input_sig_struct.sig = input_sig(1:max_sample,1); %Keep only channel 1 for simplicity. 
+input_sig_struct.Fs = Fs;
+
+% Audioencoding
+[encoded_bitstream,encoding_scheme, coderate, uncoded_bitstream] = audioencoding(input_sig_struct, "LZ", bits_per_phrase);
+
+% Audio decoding  from the encoded audio bit stream
+[decoded_bitstream] = lempelzivdecoding(encoded_bitstream,bits_per_phrase, encoding_scheme);
+
+%Compare decoded and uncoded
+% Pick smallest size
+decode_compare_size = length(decoded_bitstream);
+if length(uncoded_bitstream) < length(decoded_bitstream)
+    decode_compare_size = length(uncoded_bitstream);
+end
+num_errors = 0;
+for i = 1:decode_compare_size
+    bit_error = (uncoded_bitstream(i)~=decoded_bitstream(i));
+    num_errors = num_errors + bit_error;
+end
+num_errors = num_errors 
+
+
+
+

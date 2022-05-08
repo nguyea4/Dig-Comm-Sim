@@ -1,0 +1,27 @@
+Timeline: 
+Soft deadline begining of final exma week
+Hard deadling beginning of final exam week
+
+
+MiniProject: Incorporate all these details together end-end
+with these project
+- Simulation via computer. MATLAB
+
+Audio file -> [Tx system]--> Source Coding(Lempel Ziv) -->   Channel Coding(Convolutional Code) -> Modulation (QAM) --> CHANNEL CHARACTERISTICS (y =sqrt(p) x + N.  AWGN in simple case with x having unitary power)  -->[Demodulation] --> Channel decoding --> Source Coding -> [Rx system] --> Reconstructed File]
+
+Comparing audio and audio_hat for a wide range of SNR. Done for both with and without channel coding
+1) Can compare normalized mean square error ||(x-x_hat)/x||^2 as the final thing
+2 Qualitative assessment
+3 BER of the whole system
+4) Compression RAtio of Source Coding, Fille size after / file size before. Since it is lossless 
+5) Audio save as a file
+
+
+
+Topics: 
+Review of Prob and RV
+Source Coding
+Channel Coding
+Digital Transmission over AWGN
+Digital Modulation SChemes
+Digital Transmission over bandlimited channel

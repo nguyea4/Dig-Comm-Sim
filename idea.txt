@@ -1,0 +1,12 @@
+Idea for Dig comm project, transmit speech  over wireless communication. Like a mobile phone emulation example
+
+Beginning system : I really like anlaysis-synthesis technique (6.7) very interesting to me
+to encode speech into bits
+
+some coding scheme
+
+some modulation technique
+
+analysis under noise with BER, analysis of each section etc.
+
+maybe real life implementation???
