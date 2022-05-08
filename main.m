@@ -109,6 +109,7 @@ save(savefile)
 min_length = min(length(input_sig), length(reconstructed_sig));
 mmse = 0;
 for i = 1:min_length
+    if ~isnan(reconstructed_sig(i))
     mmse = mmse + (input_sig(i)-reconstructed_sig(i)).^2;
 end
 mmse = 1/min_length * mmse
