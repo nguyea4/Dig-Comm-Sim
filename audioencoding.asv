@@ -21,14 +21,14 @@ function [encoded_bitstream, encoding_scheme, coderate, uncoded_bitstream] = aud
             % Get Uncoded bit stream from signal
             q = quantizer('double');
             sig_bit = num2bin(q,sig); % input signal bit stream as N x 64 char array
-            sig_bit = sig_bit.'; % 64 x N
             uncoded_bitsize = q.Format(1);
             N = size(sig,1);
-            uncoded_bitstream = reshape(sig_bit,[1,N*uncoded_bitsize]); % one long bitstream that is 64*N x 1 taken sig_bit samples from the columns
-            num_bits = length(uncoded_bitstream);
+            uncoded_bitstream = reshape(sig_bit,[N*uncoded_bitsize,1]); % one long bitstream that is 64*N x 1
+            num_bits = size(uncoded_bitstream,1);
             
             [encoded_bitstream, encoding_scheme] = lempelzivencoding(uncoded_bitstream, num_bits, bits_per_phrase);
           
+            uncodin
     end
     
     coderate = length(encoded_bitstream)/length(uncoded_bitstream);

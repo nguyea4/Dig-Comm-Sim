@@ -6,7 +6,7 @@
 %   - n: n-linear combinations on shift register
 %   - G: generator polynomial (assuming k=1)
 % outputs:
-%   - output_bitstream: 1 x N char array of bits
+%   - output_bitstream: 1 x M char array of bits
 %   - coderate: k/n, number of message bits per total bits
 function [output_bitstream, coderate] = convcode(input_bitstream,k,L,n,G)
 output_bitstream  = [];

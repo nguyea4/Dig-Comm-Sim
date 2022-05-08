@@ -19,9 +19,10 @@ function [decoded_bitstream] = lempelzivdecoding (encoded_bit_stream,bits_per_ph
     % and search the 0010=2nd location for the content at that and add a 0)
     decoded_bitstream = [];
     phrase = '';
-    for bit = 1:bits_per_phrase+1:num_bits % should always have the same amount
+    for bit = 1:bits_per_phrase+1:num_bits-1 % should always have the same amount
         %Split phrase into location + codebit
-        phrase = encoded_bit_stream(bit:bit+bits_per_phrase); % Get the bits_per_phrase+1 bits
+        endIndex = min(bit+ bits_per_phrase, num_bits);
+        phrase = encoded_bit_stream(bit:endIndex); % Get the bits_per_phrase+1 bits
         loc = phrase(1:end-1);
         codeword = phrase(end);
         

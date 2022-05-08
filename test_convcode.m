@@ -175,6 +175,6 @@ state_sequence = [initial_state, state_sequence]
 decoded_bitstream = viterbidecoding(received_bitstream, k,L,n,G);
 assert(isequal(decoded_input, input_num));
 assert(isequal(decoded_bitstream,input));
-fprintf("Viterbi Hard decoding check complete from example in textbook\n");
+fprintf("Viterbi Hard decoding check complete from example 9.25 in textbook\n");
 
 

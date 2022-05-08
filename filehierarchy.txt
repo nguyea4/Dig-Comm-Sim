@@ -1,0 +1,17 @@
+main.m
+-> audioencoding.m
+---> test_audioencoding.m
+---> lempelzivencoding.m
+-----> test_lempelzivencoding.m
+-> convcoding.m
+---> test_convcode.m
+-> modulation.m
+--->modqam.m
+-----> test_modqam.m
+-> awgn.m
+-> demodqam.m
+-> viterbidecoding.m
+--> lempelzivdecoding.m
+-> Signal reconstruction (not a function or file)
+-> Metrics
+
